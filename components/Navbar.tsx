@@ -7,13 +7,12 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   return (
-    // Removi o padding exagerado e mantive a borda sutil
-    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+    // Mantendo o py-0 e a altura h-20 que você curtiu
+    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm py-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* h-16 é a altura padrão perfeita para navbars modernas */}
         <div className="flex justify-between h-20 items-center">
           
-          {/* LOGO E NOME - h-10 evita que a imagem fique gigante */}
+          {/* LOGO E NOME - h-14 */}
           <a href="https://nibuy-home-page.vercel.app/"
           className="flex items-center gap-2 cursor-pointer transition-opacity active:opacity-80" >
             <img 
@@ -26,36 +25,39 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             </span>
           </a>
 
-          {/* MENU CENTRAL - Ajustado para ser discreto */}
+          {/* MENU CENTRAL */}
           <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
+            {/* BOTÃO CONTATO - Fundo laranja fixo (Destaque da página atual) */}
             <a 
               href="#" 
               onClick={(e) => {
                 e.preventDefault();
                 window.location.reload();
               }}
-              className="bg-[#ff5722] text-white px-4 py-2 rounded-xl font-black text-[11px] uppercase shadow-md transition-all duration-300 hover:brightness-110 active:scale-95"
+              className="bg-[#ff5722] text-white px-5 py-2.5 rounded-full font-bold text-[11px] uppercase shadow-md transition-all duration-300 hover:bg-[#e64a19] active:scale-95 flex items-center justify-center"
             >
               Contato    
             </a>
 
+            {/* SOBRE NÓS - Hover Laranja Nibuy */}
             <a 
               href="https://sobre-nibuy.vercel.app/" 
-              className="text-gray-600 hover:text-black opacity-80 transition-all text-[11px] font-black uppercase tracking-widest"
+              className="text-gray-600 hover:text-[#ff5722] transition-all duration-300 text-[11px] font-black uppercase tracking-widest px-2"
             >
               Sobre Nós
             </a>
 
+            {/* CENTRAL DE AJUDA - Hover Laranja Nibuy */}
             <a 
               href="https://nibuy-central-ajuda.vercel.app/" 
-              className="text-gray-600 hover:text-black opacity-80 transition-all text-[11px] font-black uppercase tracking-widest"
+              className="text-gray-600 hover:text-[#ff5722] transition-all duration-300 text-[11px] font-black uppercase tracking-widest px-2"
             >
               Central de Ajuda
             </a>
           </div>
 
-          {/* BOTÃO DE AÇÃO - Tamanho padrão h-16 alinhado */}
-          <a href="https://nibuy-produtos.vercel.app/" className="bg-[#ff5722] text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-[#e64a19] transition-all shadow-md shadow-orange-100">
+          {/* BOTÃO DE AÇÃO DIREITA */}
+          <a href="https://nibuy-produtos.vercel.app/" className="bg-[#ff5722] text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-[#e64a19] transition-all shadow-md shadow-orange-100 active:scale-95">
             Ver Ofertas
           </a> 
 
