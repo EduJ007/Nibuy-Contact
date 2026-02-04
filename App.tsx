@@ -5,18 +5,25 @@ import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState('contact'); // Inicia na de contato como solicitado
+  // Define 'home' como padrão, mas como não temos o componente Home aqui, 
+  // ele vai mostrar a ContactPage por enquanto até tu colares os teus outros componentes
+  const [currentPage, setCurrentPage] = useState('contact'); 
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-200">
       <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
       
       <main className="flex-grow">
-        {currentPage === 'about' ? <AboutPage /> : <ContactPage />}
-        
-        {/* CTA Section - Comum a ambas as páginas */}
-        <section className="py-20 px-4">
-          <div className="max-w-5xl mx-auto bg-gray-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+        {/* Aqui ele alterna apenas entre o que tu tens nos teus ficheiros */}
+        {currentPage === 'about' ? (
+          <AboutPage />
+        ) : (
+          <ContactPage />
+        )}
+
+        {/* Seção CTA - Ajustada para o fundo cinza */}
+        <section className="py-10 px-4 bg-transparent">
+          <div className="max-w-5xl mx-auto bg-gray-900 rounded-[2rem] p-8 md:p-16 text-center relative overflow-hidden shadow-xl">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -28,14 +35,13 @@ const App: React.FC = () => {
               </svg>
             </div>
             
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-8 relative z-10">
-              Pronto para encontrar sua <span className="text-[#ff5722]">próxima grande oferta?</span>
+            <h2 className="text-2xl md:text-4xl font-black text-white mb-12 relative z-10">
+              Pronto para encontrar sua <br /><span className="text-[#ff5722]">próxima grande oferta?</span>
             </h2>
-            <a href="https://nibuy-produtos.vercel.app/"
-            >
-            <button className="bg-[#ff5722] text-white px-10 py-5 rounded-2xl font-black text-xl hover:bg-[#e64a19] hover:scale-105 transition-all shadow-2xl shadow-orange-900/40 relative z-10">
-              Começar a Economizar
-            </button>
+            <a href="https://nibuy-produtos.vercel.app/">
+              <button className="bg-[#ff5722] text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-[#e64a19] transition-all transform hover:scale-105 relative z-10">
+                Ver Ofertas Agora
+              </button>
             </a>
           </div>
         </section>
