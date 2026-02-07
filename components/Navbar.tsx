@@ -8,7 +8,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   return (
     // Mantendo o py-0 e a altura h-20 que você curtiu
-    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm py-0">
+    <nav className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm py-0 select-none outline-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           
