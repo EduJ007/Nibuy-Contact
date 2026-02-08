@@ -58,7 +58,9 @@ const ContactPage: React.FC = () => {
 
           {/* E-MAIL PROFISSIONAL */}
           <div className="relative group">
-            <a href={`mailto:${email}`}
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nibuyoficial@gmail.com"
+            target="_blank" 
+            rel="noopener noreferrer"
                className="w-full flex items-center justify-between p-6 bg-gray-900 rounded-[2rem] border-2 border-transparent hover:border-[#ff5722] transition-all shadow-xl cursor-pointer">
               
               <div className="flex items-center">
